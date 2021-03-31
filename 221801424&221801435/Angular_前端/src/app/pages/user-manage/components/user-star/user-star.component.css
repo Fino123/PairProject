@@ -1,0 +1,24 @@
+[nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }
+  .search{
+    width: 500px;
+    margin: 0 auto;
+    left: 40%;
+}
+
+.drop{
+    left: 35%;
+}
+.upload_click{
+  width: 500px;
+    margin: 0 auto;
+    left: 40%;
+}
+.fileSearch{
+  margin-left: 1000px;
+}
+.pagination{
+  margin-left:850px;
+}

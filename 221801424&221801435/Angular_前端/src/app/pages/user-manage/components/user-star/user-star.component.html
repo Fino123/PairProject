@@ -1,0 +1,47 @@
+<nz-tabset>
+    <nz-tab nzTitle="用户收藏" >
+        <nz-list nzItemLayout="vertical">
+            <nz-list-item *ngFor="let item of data;let i = index;">
+              <nz-list-item-meta>
+                <nz-list-item-meta-avatar [nzSrc]="item.avatar"> </nz-list-item-meta-avatar>
+                <nz-list-item-meta-title>
+                  <a href="{{ item.address }}">{{ item.title }}</a>
+                </nz-list-item-meta-title>
+                <nz-list-item-meta-description>
+                  作者:{{ item.author }}
+                </nz-list-item-meta-description>
+                <nz-list-item-meta-description>
+                  会议名称:{{ item.meeting_name }}
+                </nz-list-item-meta-description>
+                <nz-list-item-meta-description>
+                  关键词:{{ item.keyword }}
+                </nz-list-item-meta-description>
+              </nz-list-item-meta>
+              摘要:{{item.abstract}}
+              
+              <ul nz-list-item-actions>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 156</nz-list-item-action>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 156</nz-list-item-action>
+                <nz-list-item-action><i nz-icon nzType="star-o" style="margin-right: 8px;"></i> 2</nz-list-item-action>
+              </ul>
+              <nz-list-item-extra>
+                <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
+              </nz-list-item-extra>
+              <br />
+              <span><button nz-button [nzSize]="size" nzType="primary" (click)="delete(i)">delete</button>     
+                <button nz-button [nzSize]="size" nzType="primary" (click)="doNote(i)">note</button></span>
+            </nz-list-item>
+            
+          </nz-list>
+          <nz-pagination  [(nzPageIndex)]="page_index" [(nzPageSize)]="page_size" [(nzTotal)]="page_total" 
+          [nzShowSizeChanger]="false" [nzHideOnSinglePage]="true" (nzPageIndexChange)="getPageChangedData()"  class="pagination">
+          </nz-pagination>
+
+          <nz-drawer [nzClosable]="false" [nzVisible]="noteVisible" nzPlacement="right" nzTitle="论文笔记" (nzOnClose)="closeNote()">
+            <ng-container *nzDrawerContent>
+              <textarea style="width: 200px;height: 700px;" [(ngModel)]="noteContent" ng-trim="true"></textarea>
+            </ng-container>
+          </nz-drawer>
+      
+    </nz-tab>
+    </nz-tabset>

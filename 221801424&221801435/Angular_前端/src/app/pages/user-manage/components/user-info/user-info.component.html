@@ -1,0 +1,24 @@
+<div>
+    <nz-tabset>
+        <nz-tab nzTitle="用户信息" >
+            头像：
+            <nz-avatar [nzSize]="64" nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+            <br />
+            
+            名称：<input nz-input placeholder="Basic usage" [(ngModel)]="User.name" class="input_info" />
+            <br />
+            性别：<nz-radio-group [(ngModel)]="User.gender" class="Radio">
+                <label nz-radio nzValue="男">男</label>
+                <label nz-radio nzValue="女">女</label>
+              </nz-radio-group>
+             <br />
+             学校：<input nz-input placeholder="Basic usage" [(ngModel)]="User.school" class="input_info" />
+             <br />
+             密码：<input nz-input placeholder="Basic usage" [(ngModel)]="User.password" class="input_info" />
+
+             <br />
+             <button nz-button nzType="primary" nzSize="large" class="Button" (click)="userInfoUpdate()">修改</button>
+        </nz-tab>
+    </nz-tabset>
+
+</div>
